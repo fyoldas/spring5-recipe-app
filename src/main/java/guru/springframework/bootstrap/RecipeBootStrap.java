@@ -88,13 +88,12 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 		guacRecipe.setDescription("fafaaaaaaaaaaaaaaaaaaaafafadşl 4546456a afadpaf 65666646f4 adafsdfadfasfda 46464646 afadfadf 666 fafa");
 		
 		Notes guacNotes = new Notes();
-		guacNotes.setRecipe(guacRecipe);
 		guacNotes.setReceiptNotes("Great note guacrecipe");
 		guacRecipe.setNotes(guacNotes);
 		
-		guacRecipe.getIngredients().add(new Ingredient("each uom", new BigDecimal(2), uomEach, guacRecipe));
-		guacRecipe.getIngredients().add(new Ingredient("Tablespoon uom", new BigDecimal(3), uomTablespoon, guacRecipe));
-		guacRecipe.getIngredients().add(new Ingredient("Pinch uom", new BigDecimal(13), uomPinch, guacRecipe));
+		guacRecipe.addIngredient(new Ingredient("each uom", new BigDecimal(2), uomEach));
+		guacRecipe.addIngredient(new Ingredient("Tablespoon uom", new BigDecimal(3), uomTablespoon));
+		guacRecipe.addIngredient(new Ingredient("Pinch uom", new BigDecimal(13), uomPinch));
 		
 		guacRecipe.getCategories().add(categoryMexican);
 		guacRecipe.getCategories().add(categoryAmerican);
@@ -110,12 +109,11 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 		turkishRecipe.setDescription("fafaaaaaaaaaaaaaaaaaaaafafadşl 4546456a afadpaf 65666646f4 adafsdfadfasfda 46464646 afadfadf 666 fafa");
 		
 		Notes turkishNotes = new Notes();
-		turkishNotes.setRecipe(turkishRecipe);
 		turkishNotes.setReceiptNotes("Great note Turkish desert");
 		turkishRecipe.setNotes(turkishNotes);
 		
-		turkishRecipe.getIngredients().add(new Ingredient("each uom", new BigDecimal(2), uomEach, turkishRecipe));
-		turkishRecipe.getIngredients().add(new Ingredient("Tablespoon uom", new BigDecimal(3), uomTablespoon, turkishRecipe));
+		turkishRecipe.addIngredient(new Ingredient("each uom", new BigDecimal(2), uomEach));
+		turkishRecipe.addIngredient(new Ingredient("Tablespoon uom", new BigDecimal(3), uomTablespoon));
 		
 		turkishRecipe.getCategories().add(categoryMexican);
 		
