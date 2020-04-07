@@ -2,14 +2,11 @@ package guru.springframework.bootstrap;
 
 import java.math.BigDecimal;
 import java.util.*;
-import java.util.Set;
 
-import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Component;
 
-import antlr.collections.List;
 import guru.springframework.domain.Category;
 import guru.springframework.domain.Difficulty;
 import guru.springframework.domain.Ingredient;
@@ -19,7 +16,9 @@ import guru.springframework.domain.UnitOfMeasure;
 import guru.springframework.repositories.CategoryRepository;
 import guru.springframework.repositories.RecipeRepository;
 import guru.springframework.repositories.UnitOfMeasureRepository;
+import lombok.extern.slf4j.Slf4j;
 
+@Slf4j
 @Component
 public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEvent>{
 	
@@ -39,7 +38,9 @@ public class RecipeBootStrap implements ApplicationListener<ContextRefreshedEven
 
 	@Override
 	public void onApplicationEvent(ContextRefreshedEvent event) {
+		log.info("#####################  started data loading");
 		recipeRepository.saveAll(getRecipes());
+		log.info("#####################  data loaded successfully");
 	}
 
 	
